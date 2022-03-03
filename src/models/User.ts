@@ -29,7 +29,15 @@ const getLogin = async (login: ILogin): Promise<ILogin> => {
   return row;
 };
 
+const getById = async (id: number): Promise<IUser> => {
+  const [data] = await connection.execute('SELECT * FROM Trybesmith.Users WHERE id = ?', [id]);
+  const [row] = data as IUser[];
+
+  return row;
+};
+
 export default {
   create,
   getLogin,
+  getById,
 };
