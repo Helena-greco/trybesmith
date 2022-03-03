@@ -10,6 +10,10 @@ export interface IdProduct extends IProduct {
   id: number;
 }
 
+export interface ProductOrder extends IdProduct {
+  orderId: number | null,
+}
+
 export interface Product {
   item: IdProduct,
 }

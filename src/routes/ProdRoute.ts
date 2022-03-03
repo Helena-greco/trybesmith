@@ -13,4 +13,10 @@ router.post(
   Controller.create,
 );
 
+router.get(
+  '/products',
+  Services.validateToken,
+  Controller.getAll,
+);
+
 export default router;

@@ -67,9 +67,15 @@ const create = async (product: IProduct): Promise<Product> => {
   return newProduct;
 };
 
+const getAll = async (): Promise<IProduct[]> => {
+  const allProducts = await Models.getAll();
+  return allProducts;
+};
+
 export default {
   validateToken,
   validateName,
   validateAmount,
   create,
+  getAll,
 };
